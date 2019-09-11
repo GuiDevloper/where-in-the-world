@@ -59,3 +59,44 @@ input {
 input::placeholder {
   color: inherit;
 }
+
+/* country styles */
+.countries {
+  background: transparent;
+}
+
+.country {
+  width: 70%;
+  margin: 0 15% 10%;
+  border-radius: 5px;
+  /* width: 42.5%; */
+  /* margin: 0 0 5% 5%; */
+  width: 18.75%;
+  margin: 0 0 5% 5%;
+  display: inline-block;
+}
+
+.c-flag {
+  width: 100%;
+  border-radius: 5px 5px 0 0;
+}
+
+.country p {
+  padding: 0 25px 1%;
+  width: 100%;
+}
+
+.country b {
+  font-weight: 600;
+}
+
+.c-name {
+  padding: 25px 25px 20px !important;
+  font-weight: 800;
+  font-size: 18px;
+  letter-spacing: 0.8px;
+}
+
+.c-capital {
+  margin-bottom: 20px;
+}
