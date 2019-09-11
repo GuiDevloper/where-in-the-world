@@ -14,6 +14,9 @@ function App() {
           Dark Mode
         </p>
       </nav>
+      <header>
+        <input type="text" placeholder="Search for a country..."></input>
+      </header>
     </div>
   );
 }
