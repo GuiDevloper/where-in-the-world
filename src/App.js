@@ -6,7 +6,8 @@ class App extends React.Component {
   state = {
     country: "",
     countries: [],
-    error: false
+    error: false,
+    showOp: false
   };
   rest = 'https://restcountries.eu/rest/v2/';
 
@@ -27,6 +28,7 @@ class App extends React.Component {
   }
 
   getByName(e) {
+    this.setState({showOp: false});
     let search = e.target.value.trim();
     search = search !== "" ? `name/${search}` : 'all';
     this.getApi(search);
@@ -55,6 +57,21 @@ class App extends React.Component {
     });
   }
 
+  regions() {
+    let regs = [
+      'Africa',
+      'Americas',
+      'Asia',
+      'Europe',
+      'Oceania'
+    ];
+    return regs.map((reg, i) => (
+      <p key={i} onClick={() => this.getApi(`region/${reg}`)}>
+        {reg}
+      </p>)
+    );
+  }
+
   render() {
     return (
       <div className="App">
@@ -67,6 +84,18 @@ class App extends React.Component {
             onChange={(e) => this.getByName(e)}
             className={this.state.error ? "error" : ""}
           ></input>
+          <div className="regions">
+            <p onClick={() => {
+              this.setState({ showOp: !this.state.showOp })
+            }}>
+              Filter by Region
+            </p>
+            <div className="options" style={
+              {'display': this.state.showOp ? 'block' : 'none'}
+            }>
+              {this.regions()}
+            </div>
+          </div>
         </header>
         <div className="countries">
           {this.countries(this.state.countries)}

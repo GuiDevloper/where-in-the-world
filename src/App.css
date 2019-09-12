@@ -19,6 +19,18 @@ p {
   margin: 0;
 }
 
+nav,
+input,
+article,
+.regions {
+  font-family: "Nunito Sans", sans-serif;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+}
+
+input:focus {
+  outline: none !important;
+}
+
 .App-nav {
   padding: 1.3rem 5%;
   height: 4rem;
@@ -51,13 +63,17 @@ header {
   background: transparent;
 }
 
+input,
+.regions {
+  height: 60px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
 input {
   border: none;
-  height: 50px;
-  border-radius: 5px;
-  padding-left: 5%;
-  font-size: 14px;
   width: 40%;
+  padding-left: 5%;
 }
 
 input::placeholder {
@@ -67,6 +83,37 @@ input::placeholder {
 .error {
   color: #ff6865;
   box-shadow: 0px 0px 15px rgba(213, 61, 58, 0.7);
+}
+
+.regions {
+  cursor: pointer;
+  width: 60%;
+  max-width: 200px;
+  float: right;
+  margin: 0;
+}
+
+.regions p {
+  padding: 20px 10% 15px;
+  border-radius: inherit;
+  font-size: inherit;
+}
+
+.options {
+  margin-top: 10px;
+  position: relative;
+  border-radius: inherit;
+  padding: 5px 0;
+  font-size: inherit;
+}
+
+.options p {
+  padding: 8px 10%;
+  transition: 300ms;
+}
+
+.options p:hover {
+  background-color: #25323f;
 }
 
 /* country styles */
@@ -81,7 +128,6 @@ input::placeholder {
   display: inline-block;
   min-height: 380px;
   height: auto;
-  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
 }
 
 .c-flag {
@@ -122,8 +168,13 @@ p.c-name {
   header {
     margin: 5%;
   }
-  input {
+  input,
+  .regions {
     width: 100%;
+  }
+  .regions {
+    margin: 8% 0;
+    float: left;
   }
   .country {
     width: 70%;
