@@ -7,7 +7,8 @@ class App extends React.Component {
     country: "",
     countries: [],
     error: false,
-    showOp: false
+    showOp: false,
+    night: true
   };
   rest = 'https://restcountries.eu/rest/v2/';
 
@@ -35,26 +36,23 @@ class App extends React.Component {
   }
 
   countries(data) {
-    return data.map((val, i) => {
-      return (
-        <article className="country" key={i}>
-          <div
-            className="c-flag"
-            style={{'background-image': `url(${val.flag})`}}
-          ></div>
-          <p className="c-name">{val.name}</p>
-          <p className="c-people">
-            <b>Population:</b> {val.population}
-          </p>
-          <p className="c-region">
-            <b>Region:</b> {val.region}
-          </p>
-          <p className="c-capital">
-            <b>Capital:</b> {val.capital}
-          </p>
-        </article>
-      )
-    });
+    return data.map((val, i) => (
+      <article className="country" key={i}>
+        <div className="c-flag"
+          style={{ 'backgroundImage': `url(${val.flag})` }}
+        ></div>
+        <p className="c-name">{val.name}</p>
+        <p className="c-people">
+          <b>Population:</b> {val.population}
+        </p>
+        <p className="c-region">
+          <b>Region:</b> {val.region}
+        </p>
+        <p className="c-capital">
+          <b>Capital:</b> {val.capital}
+        </p>
+      </article>
+    ));
   }
 
   regions() {
@@ -74,16 +72,23 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="App">
+      <div className={`App ${this.state.night ? 'night' : ''}`}>
         <nav className="App-nav">
           <p className="App-title">Where in the world?</p>
-          <p className="App-night">Dark Mode</p>
+          <p className="App-night" onClick={
+            () => this.setState({night: !this.state.night})
+          }>
+            <i className="icon ion-md-moon"></i>
+            {this.state.night ? 'Light' : 'Dark'} Mode
+          </p>
         </nav>
-        <header>
-          <input type="text" placeholder="Search for a country..."
-            onChange={(e) => this.getByName(e)}
-            className={this.state.error ? "error" : ""}
-          ></input>
+        <header className="inputs">
+          <div className={`search ${this.state.error ? "error" : ""}`}>
+            <i className="icon ion-md-search"></i>
+            <input type="text" placeholder="Search for a country..."
+              onChange={(e) => this.getByName(e)}
+            ></input>
+          </div>
           <div className="regions">
             <p onClick={() => {
               this.setState({ showOp: !this.state.showOp })

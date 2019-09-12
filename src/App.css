@@ -5,21 +5,39 @@
 }
 
 * {
-  background: hsl(209, 23%, 22%);
-  color: hsl(0, 0%, 100%);
+  background: hsl(0, 0%, 100%);
+  color: hsl(200, 15%, 8%);
   font-size: 16px;
 }
 
 .App {
   min-height: 100vh;
+  background-color: hsl(0, 0%, 98%);
+}
+
+.night {
   background-color: hsl(207, 26%, 17%);
+}
+
+.night * {
+  background-color: hsl(209, 23%, 22%);
+  color: hsl(0, 0%, 100%);
+}
+
+.night input::placeholder {
+  color: inherit;
 }
 
 p {
   margin: 0;
 }
 
+i {
+  padding: 0 5%;
+}
+
 nav,
+.search,
 input,
 article,
 .regions {
@@ -57,12 +75,18 @@ input:focus {
   width: 45%;
 }
 
+.App-night i {
+  padding: 0 5px;
+}
+
 /* header style */
-header {
+.inputs {
+  height: 60px;
   margin: 3% 5%;
   background: transparent;
 }
 
+.search,
 input,
 .regions {
   height: 60px;
@@ -70,19 +94,34 @@ input,
   font-size: 14px;
 }
 
+.search {
+  width: 40%;
+  padding-left: 1%;
+  float: left;
+}
+
+.search i {
+  font-size: 1.6rem;
+  vertical-align: middle;
+}
+
 input {
   border: none;
-  width: 40%;
-  padding-left: 5%;
+  width: 80%;
+  padding-left: 2%;
+  box-shadow: none;
 }
 
 input::placeholder {
-  color: inherit;
+  color: hsl(0, 0%, 52%);
 }
 
 .error {
-  color: #ff6865;
   box-shadow: 0px 0px 15px rgba(213, 61, 58, 0.7);
+}
+
+.error input {
+  color: #ff6865;
 }
 
 .regions {
@@ -168,9 +207,12 @@ p.c-name {
   header {
     margin: 5%;
   }
-  input,
+  .search,
   .regions {
     width: 100%;
+  }
+  .search i {
+    font-size: 1.3rem;
   }
   .regions {
     margin: 8% 0;
