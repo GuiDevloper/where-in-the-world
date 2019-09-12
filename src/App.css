@@ -15,20 +15,22 @@
   background-color: hsl(207, 26%, 17%);
 }
 
+p {
+  margin: 0;
+}
+
 .App-nav {
   padding: 1.3rem 5%;
   height: 4rem;
 }
 
-p {
-  width: 45%;
+.App-nav p {
   float: left;
   letter-spacing: 0.5px;
-  /* letter-spacing: 0; */
-  margin: 0;
 }
 
 .App-title {
+  width: 45%;
   font-weight: 800;
   margin-right: 0;
   width: 55%;
@@ -40,11 +42,12 @@ p {
   font-weight: 600;
   cursor: pointer;
   font-size: 14px;
+  width: 45%;
 }
 
 /* header style */
 header {
-  margin: 5%;
+  margin: 3% 5%;
   background: transparent;
 }
 
@@ -61,6 +64,11 @@ input::placeholder {
   color: inherit;
 }
 
+.error {
+  color: #ff6865;
+  box-shadow: 0px 0px 15px rgba(213, 61, 58, 0.7);
+}
+
 /* country styles */
 .countries {
   background: transparent;
@@ -71,15 +79,20 @@ input::placeholder {
   width: 18.75%;
   margin: 0 0 5% 5%;
   display: inline-block;
+  min-height: 380px;
+  height: auto;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
 }
 
 .c-flag {
-  width: 100%;
+  background-size: cover;
+  background-position: center;
   border-radius: 5px 5px 0 0;
+  height: 180px;
 }
 
 .country p {
-  padding: 0 25px 1%;
+  padding: 0 25px 3%;
   width: 100%;
 }
 
@@ -87,17 +100,13 @@ input::placeholder {
   font-weight: 600;
 }
 
-.c-name {
-  padding: 25px 25px 20px !important;
+p.c-name {
+  padding: 25px;
+  padding-bottom: 15px;
   font-weight: 800;
   font-size: 18px;
-  letter-spacing: 0.8px;
+  letter-spacing: 0.5px;
 }
-
-.c-capital {
-  margin-bottom: 20px;
-}
-
 
 @media (max-width: 599px) {
   .App-nav {
@@ -110,12 +119,27 @@ input::placeholder {
   .App-night {
     font-size: 14px;
   }
+  header {
+    margin: 5%;
+  }
   input {
     width: 100%;
   }
   .country {
     width: 70%;
     margin: 0 15% 10%;
+    min-height: 340px;
+  }
+  .c-flag {
+    height: 155px;
+  }
+  .country p:not(.c-name) {
+    font-size: 14px;
+    padding: 0 0 2% 10%;
+  }
+  p.c-name {
+    padding-left: 10%;
+    font-size: 17px;
   }
 }
 
