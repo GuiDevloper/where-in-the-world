@@ -36,11 +36,107 @@ i {
   padding: 0 5%;
 }
 
+a {
+  text-decoration: none;
+  background: none;
+}
+
+b {
+  font-weight: 600;
+}
+
+button {
+  border: none;
+  width: 120px;
+  height: 40px;
+  margin: 5%;
+  background: inherit;
+  border-radius: 5px;
+}
+
+button a {
+  font-size: 14px;
+}
+
+.country-page {
+  display: inline-block;
+  width: 100%;
+}
+
+.single-country {
+  height: 100%;
+  width: 90%;
+  margin: 0 5%;
+  border-radius: 5px;
+  box-shadow: none;
+  font-size: 16px;
+  background: none;
+}
+
+.single-country *:not(button) {
+  background: none;
+}
+
+.s-flag {
+  width: 40%;
+}
+
+.s-data {
+  margin: 2% 0 5% 10%;
+  width: 50%;
+}
+
+.s-title {
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.s-flag,
+.s-data,
+.s-data div,
+.border {
+  float: left;
+}
+
+.s-data div {
+  width: 45%;
+  height: 50%;
+}
+
+.s-data p {
+  padding: 2% 0;
+}
+
+.s-lastInfo {
+  margin-left: 5%;
+}
+
+.s-border {
+  width: auto;
+  height: 30px;
+  padding: 0 5%;
+  margin: 1%;
+}
+
+.s-border a {
+  font-size: 14px;
+}
+
+.border {
+  width: 100%;
+  padding-top: 5%;
+}
+
+.border b {
+  margin-right: 2%;
+}
+
 nav,
 .search,
 input,
 article,
-.regions {
+.regions,
+button {
   font-family: "Nunito Sans", sans-serif;
   box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
 }
@@ -156,7 +252,7 @@ input::placeholder {
 }
 
 /* country styles */
-.countries {
+.container {
   background: transparent;
 }
 
@@ -179,10 +275,6 @@ input::placeholder {
 .country p {
   padding: 0 25px 3%;
   width: 100%;
-}
-
-.country b {
-  font-weight: 600;
 }
 
 p.c-name {
@@ -233,6 +325,38 @@ p.c-name {
   p.c-name {
     padding-left: 10%;
     font-size: 17px;
+  }
+  p.s-title {
+    font-size: 20px;
+    padding: 5% 0;
+  }
+
+  button {
+    height: 30px;
+  }
+
+  .s-flag {
+    width: 100%;
+    margin: 25px 0;
+  }
+
+  .s-data {
+    width: 100%;
+    margin: 0;
+  }
+
+  .border b {
+    display: block;
+    padding: 5% 0;
+  }
+
+  .s-data div {
+    width: 100%;
+    margin: 0;
+  }
+
+  .border {
+    padding-bottom: 10%;
   }
 }
 
