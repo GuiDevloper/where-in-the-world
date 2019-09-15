@@ -3,11 +3,13 @@ import './App.css';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Home from './Home';
 import Country from './Country';
+import Logic from './Logic';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.setCountries = this.setCountries.bind(this);
+    Logic();
   }
 
   state = {
