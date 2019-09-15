@@ -50,9 +50,9 @@ class Country extends React.Component {
                 <p><b>Population:</b> {
                   (+ctry[0].population).toLocaleString('pt-BR')
                 }</p>
-                <p><b>Region:</b> {ctry[0].region}</p>
-                <p><b>Sub Region:</b> {ctry[0].subregion}</p>
-                <p><b>Capital:</b> {ctry[0].capital}</p>
+                <p><b>Region:</b> {ctry[0].region || 'No'}</p>
+                <p><b>Sub Region:</b> {ctry[0].subregion || 'No'}</p>
+                <p><b>Capital:</b> {ctry[0].capital || 'No'}</p>
               </div>
               <div className="s-lastInfo container">
                 <p><b>Top Level Domain:</b> {ctry[0].topLevelDomain}</p>
@@ -75,8 +75,7 @@ class Country extends React.Component {
                     }}>
                       {el.name}
                     </Link>
-                  </button>
-                  )
+                  </button>)
                 ) : ''}
               </section>
             </section>

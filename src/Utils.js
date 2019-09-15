@@ -16,7 +16,7 @@ const getApi = (param, set, getBorders) => {
       set(data);
     }
   });
-}
+};
 
 const countries = (data, countriesError) => {
   return data.map((val, i) => (
@@ -35,10 +35,10 @@ const countries = (data, countriesError) => {
         <b>Population:</b> {(+val.population).toLocaleString('pt-BR')}
       </p>
       <p className="c-region">
-        <b>Region:</b> {val.region}
+        <b>Region:</b> {val.region || 'No'}
       </p>
       <p className="c-capital">
-        <b>Capital:</b> {val.capital}
+        <b>Capital:</b> {val.capital || 'No'}
       </p>
     </Link>
   ));

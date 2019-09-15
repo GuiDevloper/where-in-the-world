@@ -16,7 +16,7 @@ class Home extends React.Component {
     this.setState({ showOp: false, country: e.target.value });
     let search = e.target.value.trim();
     search = search !== "" ? `name/${search}` : "all";
-    getApi(search, this.props.setCountries);
+    getApi(search, this.countriesError);
   }
 
   countriesError = [
